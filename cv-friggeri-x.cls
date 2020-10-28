@@ -23,6 +23,8 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
+\usepackage{longtable}
+
 
 %%%%%%%%%%
 % Colors %
@@ -46,11 +48,13 @@
 \definecolor{lblue}{HTML}{0077B5}
 \definecolor{vkblue}{HTML}{A6B8D4}
 
+\definecolor{headblue}{HTML}{282c34}
+
 \ifdefined\@cv@lightheader
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
-\else 
-  \colorlet{fillheader}{gray}
+\else
+  \colorlet{fillheader}{headblue}
   \colorlet{header}{white}
 \fi
 
@@ -101,6 +105,10 @@
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+    \node[anchor=north west, inner sep=0pt] (picture) at (current page.north west)
+      {\includegraphics[width=8cm,height=4cm]{resources/circuit.png}};
+    % \node[anchor=north east, inner sep=0pt] (picture) at (current page.north east)
+    %   {\includegraphics[width=8cm,height=4cm]{resources/code_corner2.png}};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
@@ -167,9 +175,9 @@
 
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+  \begin{longtable}{@{\extracolsep{\fill}}ll}
 }{%
-  \end{tabular*}
+\end{longtable}
 }
 
 % Set a4paper and US letter size as explained here:
@@ -181,7 +189,7 @@
   \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.1cm}{%
   \textbf{#2}%
   \hfill%
-  {, \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+  {\normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
   #4\vspace{\parsep}%
   }\\}
 \else
@@ -189,10 +197,15 @@
     \parbox[t]{2cm}{\hfill#1}&\parbox[t]{11.6cm}{%
     \textbf{#2}%
     \hfill%
-    {, \normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
+    {\normalsize\addfontfeature{Color=lightgray} \textit{#3}}\\%
     #4\vspace{\parsep}%
     }\\}
 \fi
+
+\newcommand{\smallentry}[1]{%
+\parbox[t]{2cm}{\hfill}&\parbox[t]{11.1cm}{%
+#1\vspace{\parsep}
+}\\}
 
 %%%%%%%%%%%%%%
 % Side block %
@@ -326,7 +339,7 @@
 }
 
 \DeclareNameFormat{author}{%
-  \small\addfontfeature{Color=lightgray}%
+  \space\small\addfontfeature{Color=lightgray}%
   \nameparts{#1}\ifblank{\namepartgiven}{}{\namepartgiven\space}\namepartfamily%
   \ifthenelse{\value{listcount}<\value{liststop}}
     {\addcomma\space}
@@ -383,6 +396,11 @@
 % Add twitter logo
 \newcommand*{\tlogo}{%
   \textcolor{tblue}{\includegraphics[height=1em]{resources/twitter_logo}}%
+}
+
+% Add github logo
+\newcommand*{\ghlogo}{%
+  \textcolor{black}{\includegraphics[height=1em]{resources/gh_logo}}%
 }
 
 % Add linkedin logo

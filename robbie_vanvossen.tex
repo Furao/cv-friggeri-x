@@ -1,0 +1,288 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% cv-friggeri-x 1.0 (01/01/2016)
+% XeLaTeX Template
+%
+% Based on:
+% Friggeri Resume/CV
+% Version 1.2 (3/5/15)
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% Modified by:
+% Nadorrano
+% https://github.com/Nadorrano/cv-friggeri-x
+%
+% License:
+% MIT (https://opensource.org/licenses/MIT)
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography,
+% if used, needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{cv-friggeri-x}
+% Add `a4paper` to set a4 paper size
+% Add `nocolors` to remove colors from the document
+% Add `lightheader` to change the dark background of the header to white
+
+\usepackage{marvosym} % needed to print glyphs for email, cell phone etc.
+
+\addbibresource{bibliography.bib} % Specify the bibliography file to include publications
+
+\begin{document}
+
+\header{Robbie}{VanVossen}{Senior Embedded Engineer} % Your name and current job title/field
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{contact}
+\pin \hfill 243 Buck Creek Ct
+Grand Rapids, MI 49548
+~
+%{\Large\textcolor{gray}{\Telefon}} \hfill +0 (000) 111 1111
+{\Large\textcolor{gray}{\Mobilefone}} \hfill 616.304.5234
+{\Large\textcolor{gray}{\Letter}} \hfill \href{mailto:vanvossr@gmail.com}{vanvossr@gmail}
+~
+\llogo \hfill \href{https://www.linkedin.com/in/robbie-vanvossen-gr/}{robbie-vanvossen-gr}
+\ghlogo \hfill \href{http://github.com/Furao}{Furao}
+~
+\section{programming languages}
+{\Large\textcolor{gray}{\Keyboard}} \LaTeX, C, Python, Iron Python, Java, MYSQL, HTML5, CSS3, Javascript
+\section{frameworks}
+GTK, .NET, QT, Tkinter, Robot Framework, React-Native, Xilinx BSP
+\section{applications}
+Microsoft Word, Excel, AutoCAD, LT-SPICE, Adobe Photoshop, Visual Studio, Draw.io, MPLabX, Atom, Vim
+\section{version control}
+git, svn, hg
+\section{platforms}
+Windows, Mac, Linux, ARM, OMAP3730, Zynq7000, Zynq UltraScale+ MPSoC, i.MX8, Raspberry Pi, RISC-V, Hi-Five Unleashed
+\section{professional interests}
+embedded design, virtualization, security, microkernels, drivers, operating systems, open source, machine learning
+\section{personal interests}
+running, design, games, family
+\end{aside}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{experience}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2012--Now}
+{DornerWorks, Ltd.}
+{Grand Rapids, MI}
+{\emph{Embedded Systems Engineer}}
+
+\smallentry
+{\textbf{2020:}  PI on Phase I ARMY SBIR. Improved support for seL4 on RISC-V and implemented an HTTP server application for demonstration. Wrote Phase II ARMY SBIR proposal which was awarded to DornerWorks. Help with port of VxWork7 to run as a guest on seL4. Updated VxWorks7 guest to support virtio-net for ARM platforms so virtual networking could be used. Developed applications on the ZUS+ R5 and a Microblaze in FPGA that communicate with each other and interface with an NVMe storage device. Co-Leading development of a VM SDK tool which is part of a NASA SBIR.}
+
+\smallentry
+{\textbf{2019:} Obtained a Secret security clearance. PI and tech lead on multiple projects. Developed virtualized seL4 based systems for multiple customers and improved upon the available features available. These implementations targetted both x86 and ARM platforms. PI as a subcontract on the DARPA Blackjack project and provided new seL4 features and general seL4 support. Wrote a proposal for a Phase I ARMY SBIR which was awarded to DornerWorks.}
+
+\smallentry
+{\textbf{2018:}  Principal Investigator (PI) for DARPA SBIR on seL4 running on an ARM based ARMY platform. Ported seL4 to the Xilinx ZUS+. Implemented gerrit server to support easier code reviews across the team. Helped define and give training for the first seL4 Summit. PI for an ARMY project and led the team that ported seL4 VMM support to 64-bit ARM. This required virtual channels, a GIC500 driver, virtual UART driver, and MMU driver updateds. This code was open sourced on the DornerWorks github.}
+
+\smallentry
+{\textbf{2017:} Ported zynq7000 Ethernet driver from u-boot to seL4. Architected and developed a virtual block driver based on Virtio-blk for Camkes-VM, which is the Virtualization mode of seL4. Contributed to Xen port to i.MX8. Contributed to seL4 port to Zynq UltraScale+ MPSoC.}
+
+\smallentry
+{\textbf{2016:} Ported uCOS as a guest on Xen. Ported seL4 to run on the CubieTruck. Wrote prototype seL4 applications that handled mixed criticality data. Wrote requirements and architecture documentation for seL4 applications. Presented about Xen at NXP Event.}
+
+\smallentry
+{\textbf{2015:} Wrote and ran debugger tests for the P8A flight management system. Created the Xen Zynq Distribution (XZD) which is a distribution for running the Xen hypervisor on the Xilinx Zynq UltraScale+ MPSoC. Created a Xen guest container for a bare metal application on the XZD.}
+
+\smallentry
+{\textbf{2014:} Modified existing codebase to be MISRA compliant. Wrote custom boot loaders for the Zynq-7000. Helped write a configuration tool for an ARINC653 operating system.}
+
+\smallentry
+{\textbf{2012--2013:} Ported the Xen hypervisor to run on the ARM based Beagleboard-xM development board. Took part in writing DO-178 certification documents for a project, including requirements, architecture design, and verification and validation. Wrote SPI, UART, and Timer drivers for the OMAP3730.}
+%------------------------------------------------
+
+\entry
+{2010--2012}
+{DornerWorks, Ltd.}
+{Grand Rapids, MI}
+{\emph{Engineering Intern}\\
+Wrote and helped design a python application that automated many of the electrical engineers' tasks. It also tied in to a MYSQL database that I helped design and construct.}
+\smallentry
+{Wrote and designed an iron python application using .NET that connected an accounting database to a time tracking system. This significantly decreased time spent doing data entry.}
+\smallentry
+{Helped transfer the company's website from static html pages to a wordpress based website. This required me to pick up HTML, CSS, and some PHP.}
+
+%------------------------------------------------
+
+\entry
+{2009--2010}
+{Bico Michigan}
+{Grand Rapids, MI}
+{\emph{CAD Internship} \\
+Created 2D models using Autocad for laser cutting steel plates.}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%---------------------------------------------------------------------------------------
+
+\section{education}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{Aug 2012}
+{B.S.E. Computer Engineering}
+{Grand Valley State University}
+{Honor's College}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{presentations}
+
+\begin{entrylist}
+
+%------------------------------------------------
+
+\entry
+{2019}
+{\href{https://youtu.be/gBIRDBekQP4}{Intro to the seL4 microkernel}}
+{DornerWorks}
+{Webinar}
+
+%------------------------------------------------
+
+\entry
+{2019}
+{\href{vhttps://www.sel4-us.org/summit/presentations/Session_2_Talk_3_VanVossen_Practical_Use_of_seL4.pdf}{Practical Use of seL4}}
+{seL4 Summit}
+{}
+
+%------------------------------------------------
+
+\entry
+{2019}
+{\href{http://gvsets.ndia-mich.org/publication.php?documentID=765}{The seL4 Microkernel – A Robust, Resilient, and Open-Source Foundation for Ground Vehicle Electronics Architecture}}
+{GVSETS}
+{}
+
+%------------------------------------------------
+
+\entry
+{2016}
+{\href{http://gvsets.ndia-mich.org/publication.php?documentID=60}{Xen on the Zynq UltraScale+ MPSoC}}
+{GVSETS}
+{}
+
+%------------------------------------------------
+
+\entry
+{2015}
+{\href{https://youtu.be/arNnhfXYCkM}{Getting U-Boot FIT for Xen}}
+{Xen Developer’s Summit}
+{}
+
+%------------------------------------------------
+
+\entry
+{2015}
+{Xilinx TSC}
+{Xilinx Headquarters}
+{Presented on Xen on the Xilinx Zynq Ultrascale+ MPSoC}
+
+%------------------------------------------------
+
+\entry
+{2014}
+{\href{https://www.slideshare.net/xen_com_mgr/art-certification}{Xen and the Art of Certification}}
+{Xen Developers Summit}
+{Co-Presented with Nathan Studer}
+
+%------------------------------------------------
+
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+% \section{communication skills}
+%
+% \begin{entrylist}
+%
+% %------------------------------------------------
+%
+% \entry
+% {2011}
+% {Oral Presentation}
+% {California Business Conference}
+% {Presented the research I conducted for my Masters of Commerce degree.}
+%
+% %------------------------------------------------
+%
+% \entry
+% {2010}
+% {Poster}
+% {Annual Business Conference, Oregon}
+% {As part of the course work for BUS320, I created a poster analyzing several local businesses and presented this at a conference.}
+%
+% %------------------------------------------------
+%
+% \end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+% \section{interests}
+%
+% \textbf{professional:} embedded design, virtualization, security, microkernels, drivers, operating systems, open source, machine learning \\
+% \textbf{personal:} running, design, games, family
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{publications}
+
+% \printbibsection{article}{article in peer-reviewed journal} % Print all articles from the bibliography
+%
+% \printbibsection{book}{books} % Print all books from the bibliography
+%
+\begin{refsection} % This is a custom heading for those references marked as "inproceedings" but not containing "keyword=france"
+\nocite{*}
+\printbibliography[sorting=chronological, type=inproceedings, title={}, notkeyword={france}, heading=none]
+\end{refsection}
+%
+% \begin{refsection} % This is a custom heading for those references marked as "inproceedings" and containing "keyword=france"
+% \nocite{*}
+% \printbibliography[sorting=chronological, type=inproceedings, title={local peer-reviewed conferences/proceedings}, keyword={france}, heading=bibheading]
+% \end{refsection}
+
+% \printbibsection{inproceedings}{} % Print all miscellaneous entries from the bibliography
+
+% \printbibsection{report}{research reports} % Print all research reports from the bibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
